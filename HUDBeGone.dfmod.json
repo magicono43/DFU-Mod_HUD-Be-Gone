@@ -1,0 +1,14 @@
+{
+    "ModTitle": "HUDBeGone",
+    "ModVersion": "1.00",
+    "ModAuthor": "Kirk.O",
+    "ContactInfo": "kirkoliveri@gmail.com",
+    "DFUnity_Version": "1.0.0",
+    "ModDescription": "Selectively hide individual vanilla HUD elements.",
+    "GUID": "b9a4af93-90ed-4e1b-a069-16f2af5a6f5d",
+    "Files": [
+        "Assets/Game/Mods/DFU-Mod_HUD-Be-Gone/modsettings.json",
+        "Assets/Game/Mods/DFU-Mod_HUD-Be-Gone/Scripts/HUDBeGoneMain.cs"
+    ],
+    "Dependencies": []
+}
