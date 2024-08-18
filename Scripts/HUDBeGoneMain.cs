@@ -3,8 +3,8 @@
 // License:         MIT License (http://www.opensource.org/licenses/mit-license.php)
 // Author:          Kirk.O
 // Created On: 	    8/13/2024, 7:00 PM
-// Last Edit:		8/15/2024, 7:30 AM
-// Version:			1.00
+// Last Edit:		8/17/2024, 8:40 PM
+// Version:			1.01
 // Special Thanks:  
 // Modifier:
 
@@ -16,6 +16,7 @@ using DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings;
 using System;
 using DaggerfallWorkshop.Game.UserInterfaceWindows;
 using DaggerfallWorkshop.Game.Utility;
+using DaggerfallWorkshop;
 
 namespace HUDBeGone
 {
@@ -189,6 +190,10 @@ namespace HUDBeGone
             dfuHud.ShowMidScreenText = !hudElements[8];
             dfuHud.ShowEscortingFaces = !hudElements[9];
             dfuHud.ShowLocalQuestPlaces = !hudElements[10];
+
+            if (!DaggerfallUnity.Settings.Crosshair) { dfuHud.ShowCrosshair = false; }
+            if (DaggerfallUnity.Settings.InteractionModeIcon.ToLower() == "none") { dfuHud.ShowInteractionModeIcon = false; }
+            if (!DaggerfallUnity.Settings.EnableArrowCounter) { dfuHud.ShowArrowCount = false; }
         }
 
         public static void ForceHUDVisible()
@@ -205,7 +210,11 @@ namespace HUDBeGone
             dfuHud.ShowPopupText = true;
             dfuHud.ShowMidScreenText = true;
             dfuHud.ShowEscortingFaces = true;
-            dfuHud.ShowLocalQuestPlaces = true; // May have to remove this setting, if it starts to show quest debug text, will see with testing.
+            dfuHud.ShowLocalQuestPlaces = true;
+
+            if (!DaggerfallUnity.Settings.Crosshair) { dfuHud.ShowCrosshair = false; }
+            if (DaggerfallUnity.Settings.InteractionModeIcon.ToLower() == "none") { dfuHud.ShowInteractionModeIcon = false; }
+            if (!DaggerfallUnity.Settings.EnableArrowCounter) { dfuHud.ShowArrowCount = false; }
         }
 
         private void Update()
